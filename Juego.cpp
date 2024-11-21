@@ -5,4 +5,4 @@
 void Juego::iniciar() {
     tablero.inicializar();
     tablero.imprimirTablero();
-}
+} 
