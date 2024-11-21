@@ -1,5 +1,4 @@
 #include <iostream>
-#include "Tablero.hpp";
 
 class Juego {
 private:

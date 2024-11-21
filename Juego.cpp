@@ -1,6 +1,6 @@
-#include <iostream>;
-#include "Juego.hpp";
-#include "Tablero.hpp";
+#include <iostream>
+#include "Juego.hpp"
+#include "Tablero.hpp"
 
 void Juego::iniciar() {
     tablero.inicializar();

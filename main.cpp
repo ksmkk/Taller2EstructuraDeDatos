@@ -1,5 +1,5 @@
-#include <iostream>;
-#include "Juego.hpp";
+#include <iostream>
+#include "Juego.hpp"
 
 int main() {
     Juego* juego = new Juego();
