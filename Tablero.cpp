@@ -6,10 +6,14 @@ Tablero::Tablero() {
 }
 
 void Tablero::inicializar() {
-    for (int i = 0; i < 3; i++)
-        for (int j = 0; j < 3; j++)
+    for (int i = 0; i < 3; i++) {
+        for (int j = 0; j < 3; j++) {
             tablero[i][j] = ' ';
+        }
+    }
+    imprimirTablero();  
 }
+
 
 void Tablero::imprimirTablero() {
     std::cout << "  0   1   2" << std::endl;
