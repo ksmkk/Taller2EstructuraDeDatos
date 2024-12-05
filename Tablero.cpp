@@ -11,8 +11,10 @@ void Tablero::inicializar() {
             tablero[i][j] = ' ';
         }
     }
-    imprimirTablero();  
+    std::cout << "Tablero inicializado:\n";
+    imprimirTablero();
 }
+
 
 
 void Tablero::imprimirTablero() {
