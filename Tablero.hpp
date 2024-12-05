@@ -1,5 +1,5 @@
-#include <iostream>
-#pragma once
+#ifndef TABLERO_HPP
+#define TABLERO_HPP
 
 class Tablero {
 private:
@@ -9,5 +9,6 @@ public:
     Tablero();
     void inicializar();
     void imprimirTablero();
-    ~Tablero();
 };
+
+#endif

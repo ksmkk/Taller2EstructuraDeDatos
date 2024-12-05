@@ -1,12 +1,9 @@
-#include <iostream>
 #include "Juego.hpp"
-#include "Tablero.hpp"
+#include <iostream>
 
-Juego::Juego() {
-    
-}
+Juego::Juego() {}
 
 void Juego::iniciar() {
     tablero.inicializar();
     tablero.imprimirTablero();
-} 
+}
