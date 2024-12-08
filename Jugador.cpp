@@ -1,5 +1,5 @@
 #include "Jugador.hpp"
-#include "Minimax.cpp"
+#include "Minimax.hpp"
 #include <iostream>
 
 Jugador::Jugador(std::string& nombre, char simbolo) : nombre(nombre), simbolo(simbolo) {}
