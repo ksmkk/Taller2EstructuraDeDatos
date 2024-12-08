@@ -12,7 +12,6 @@ void Tablero::inicializar() {
         }
     }
     std::cout << "Tablero inicializado:\n";
-    imprimirTablero();
 }
 
 
