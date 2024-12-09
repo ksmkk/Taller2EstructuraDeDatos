@@ -4,6 +4,7 @@
 #include <limits>
 
 Tablero::Tablero() {
+    inicializar();
 }
 
 void Tablero::inicializar() {
@@ -64,7 +65,7 @@ bool Tablero::esEmpate() {
 }
 
 void Tablero::menuTablero() {
-    bool EsVerdad, turnoJugador = true;
+    bool EsVerdad = true, turnoJugador = true;
     int fila, columna, op;
     char simboloJugador;
     std::string nombre;
