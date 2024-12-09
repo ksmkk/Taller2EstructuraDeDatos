@@ -121,7 +121,7 @@ void Tablero::menuTablero() {
             turnoJugador = true;
         }
 
-        if (esEmpate) {
+        if (esEmpate()) {
             imprimirTablero();
             std::cout << "¡Es un empate!" << std::endl;
             break;
