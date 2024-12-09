@@ -36,7 +36,7 @@ void Tablero::menuTablero(){
     {
         std::cout << "===============TIC TAC==================" << std::endl;
         std::cout << " " << std::endl;
-        std::cout << "Ingrese una opción: " << std::endl;
+        std::cout << "Ingrese una opcion: " << std::endl;
         std::cout << "1. Jugar" << std::endl;
         std::cout << "2. Salir" << std::endl;
         std::cout << "> ";
@@ -47,7 +47,7 @@ void Tablero::menuTablero(){
     switch (op)
     {
     case 1:
-        std::cout<<"¿Que simbolo usarás (X , O)?"<<std::endl;
+        std::cout<<"¿Que simbolo usaras (X , O)?"<<std::endl;
         std::cout<< "Ingresa fila: "<<std::endl;
         std::cin>> fila;
         std::cout<<"Ingrese columna: "<<std::endl;
@@ -56,9 +56,10 @@ void Tablero::menuTablero(){
         break;
     case 2:
         std::cout<<"Hasta Luego!"<<std::endl;
+        EsVerdad = false;
     
     default:
-        std::cout << "Opción incorrecta, Reingrese:" << std::endl;
+        std::cout << "Opcion incorrecta, Reingrese:" << std::endl;
         break;
     }
 }

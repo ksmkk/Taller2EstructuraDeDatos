@@ -13,7 +13,8 @@ Compilador: g++
 Estructura:
 Código organizado en archivos .cpp y .h para mantener la modularidad.
 Uso de punteros y arrays estáticos para gestionar la memoria.
-Ejecución del Programa
+
+# Ejecución del Programa
 Para ejecutar el programa, utiliza los siguientes comandos:
 
 g++ -o TicTac Minimax.cpp Jugador.cpp Juego.cpp Tablero.cpp main.cpp
