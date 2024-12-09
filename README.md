@@ -4,7 +4,7 @@ Crea un juego de tablero básico e implementa los algoritmos Minimax y Poda Alfa
 # Integrantes
 Bastián Salinas, 21.848.994-K, bastian.salinas01@alumnos.ucn.cl, Paralelo C1.
 
-Tomás Guerra, , 21.664.344-5 tomas.guerra@alumnos.ucn.cl, Paralelo C1.
+Tomás Guerra, 21.664.344-5 , tomas.guerra@alumnos.ucn.cl, Paralelo C1.
 
 # Persistencia de Datos:
 
