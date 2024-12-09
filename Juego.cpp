@@ -5,6 +5,6 @@ Juego::Juego() {}
 
 void Juego::iniciar() {
     tablero.inicializar();
-    tablero.menuTablero();
     tablero.imprimirTablero();
+    tablero.menuTablero();
 }
