@@ -30,7 +30,8 @@ void Tablero::imprimirTablero() {
 }
 void Tablero::menuTablero(){
     bool EsVerdad = true;
-    int fila, columna, op = 0; 
+    int fila, columna, op = 0;
+    char simbolo; 
     
     while (EsVerdad)
     {
@@ -40,7 +41,7 @@ void Tablero::menuTablero(){
         std::cout << "1. Jugar" << std::endl;
         std::cout << "2. Salir" << std::endl;
         std::cout << "> ";
-        std::cin.ignore(op);
+        std::cin >> op;
     }
     
     
@@ -48,6 +49,7 @@ void Tablero::menuTablero(){
     {
     case 1:
         std::cout<<"¿Que simbolo usaras (X , O)?"<<std::endl;
+        std::cin >> simbolo;
         std::cout<< "Ingresa fila: "<<std::endl;
         std::cin>> fila;
         std::cout<<"Ingrese columna: "<<std::endl;
