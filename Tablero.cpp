@@ -42,9 +42,7 @@ void Tablero::menuTablero(){
         std::cout << "2. Salir" << std::endl;
         std::cout << "> ";
         std::cin >> op;
-    }
-    
-    
+
     switch (op)
     {
     case 1:
@@ -63,5 +61,6 @@ void Tablero::menuTablero(){
     default:
         std::cout << "Opcion incorrecta, Reingrese:" << std::endl;
         break;
+        }
     }
 }
