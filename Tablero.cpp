@@ -3,10 +3,12 @@
 #include <iostream>
 #include <limits>
 
+// Constructor
 Tablero::Tablero() {
     inicializar();
 }
 
+// Inicializar el tablero
 void Tablero::inicializar() {
     for (int i = 0; i < 3; i++) {
         for (int j = 0; j < 3; j++) {
@@ -15,6 +17,7 @@ void Tablero::inicializar() {
     }
 }
 
+// Imprimir el tablero
 void Tablero::imprimirTablero() {
     std::cout << "  0   1   2" << std::endl;
     for (int i = 0; i < 3; i++) {
@@ -28,12 +31,16 @@ void Tablero::imprimirTablero() {
     }
 }
 
+// Validar movimiento
 bool Tablero::esMovimientoValido(int fila, int columna) {
     return fila >= 0 && fila < 3 && columna >= 0 && columna < 3 && tablero[fila][columna] == ' ';
 }
 
+// Evaluar estado del tablero
 int Tablero::evaluar(char simbolo) {
     char oponente = (simbolo == 'X') ? 'O' : 'X';
+
+    // Comprobar filas y columnas
     for (int i = 0; i < 3; i++) {
         if ((tablero[i][0] == simbolo && tablero[i][1] == simbolo && tablero[i][2] == simbolo) ||
             (tablero[0][i] == simbolo && tablero[1][i] == simbolo && tablero[2][i] == simbolo)) {
@@ -44,6 +51,8 @@ int Tablero::evaluar(char simbolo) {
             return -10;
         }
     }
+
+    // Comprobar diagonales
     if ((tablero[0][0] == simbolo && tablero[1][1] == simbolo && tablero[2][2] == simbolo) ||
         (tablero[0][2] == simbolo && tablero[1][1] == simbolo && tablero[2][0] == simbolo)) {
         return 10;
@@ -52,9 +61,12 @@ int Tablero::evaluar(char simbolo) {
         (tablero[0][2] == oponente && tablero[1][1] == oponente && tablero[2][0] == oponente)) {
         return -10;
     }
+
+    // Caso de empate
     return 0;
 }
 
+// Verificar empate
 bool Tablero::esEmpate() {
     for (int i = 0; i < 3; i++) {
         for (int j = 0; j < 3; j++) {
@@ -64,12 +76,12 @@ bool Tablero::esEmpate() {
     return true;
 }
 
+// Menu principal
 void Tablero::menuTablero() {
     bool EsVerdad = true, turnoJugador = true;
     int fila, columna, op;
-    char simboloJugador;
+    char simboloJugador, simboloIA;
     std::string nombre;
-    char simboloIA;
 
     while (EsVerdad) {
         std::cout << "=============== TIC TAC TOE ==============" << std::endl;
@@ -82,7 +94,7 @@ void Tablero::menuTablero() {
         case 1:
             std::cout << "Ingrese su nombre: ";
             std::cin >> nombre;
-            std::cout << "¿Que simbolo usaras (X, O)? ";
+            std::cout << "Que simbolo usaras (X, O)? ";
             std::cin >> simboloJugador;
             simboloIA = (simboloJugador == 'X') ? 'O' : 'X';
 
@@ -93,18 +105,18 @@ void Tablero::menuTablero() {
                     std::cout << nombre << " (" << simboloJugador << "), ingresa fila y columna: ";
                     std::cin >> fila >> columna;
 
-                    if (fila >= 0 && fila < 3 && columna >= 0 && columna < 3 && tablero[fila][columna] == ' ') {
+                    if (esMovimientoValido(fila, columna)) {
                         tablero[fila][columna] = simboloJugador;
 
                         if (evaluar(simboloJugador) == 10) {
                             imprimirTablero();
-                            std::cout << "¡Felicidades " << nombre << ", has ganado!" << std::endl;
+                            std::cout << "Felicidades " << nombre << ", has ganado!" << std::endl;
                             break;
                         }
 
                         turnoJugador = false;
                     } else {
-                        std::cout << "Movimiento inválido. Intenta de nuevo." << std::endl;
+                        std::cout << "Movimiento invalido. Intenta de nuevo." << std::endl;
                     }
                 } else {
                     int mejorFila, mejorColumna;
@@ -113,7 +125,7 @@ void Tablero::menuTablero() {
 
                     if (evaluar(simboloIA) == 10) {
                         imprimirTablero();
-                        std::cout << "¡La IA ha ganado! Mejor suerte la próxima vez, " << nombre << "." << std::endl;
+                        std::cout << "La IA ha ganado! Mejor suerte la proxima vez, " << nombre << "." << std::endl;
                         break;
                     }
 
@@ -122,19 +134,19 @@ void Tablero::menuTablero() {
 
                 if (esEmpate()) {
                     imprimirTablero();
-                    std::cout << "¡Es un empate!" << std::endl;
+                    std::cout << "Es un empate!" << std::endl;
                     break;
                 }
             }
             break;
 
         case 2:
-            std::cout << "¡Hasta luego!" << std::endl;
+            std::cout << "Hasta luego!" << std::endl;
             EsVerdad = false;
             break;
 
         default:
-            std::cout << "Opción incorrecta, reintente." << std::endl;
+            std::cout << "Opcion incorrecta, reintente." << std::endl;
             break;
         }
     }
