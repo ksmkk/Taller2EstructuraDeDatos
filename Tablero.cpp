@@ -65,7 +65,7 @@ bool Tablero::esEmpate() {
 }
 
 void Tablero::menuTablero() {
-    bool EsVerdad = true;
+    bool EsVerdad, turnoJugador = true;
     int fila, columna, op;
     char simboloJugador;
     std::string nombre;
@@ -87,7 +87,6 @@ void Tablero::menuTablero() {
             std::cin >> simboloJugador;
             simboloIA = (simboloJugador == 'X') ? 'O' : 'X';
 
-            bool turnoJugador = true;
             while (true) {
                 imprimirTablero();
 
