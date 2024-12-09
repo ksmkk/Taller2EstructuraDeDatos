@@ -55,18 +55,6 @@ int Tablero::evaluar(char simbolo) {
     return 0;
 }
 
-bool hayMovimientosDisponibles(char tablero[3][3]) {
-    for (int i = 0; i < 3; i++) {
-        for (int j = 0; j < 3; j++) {
-            if (tablero[i][j] == ' ') {
-                return true; 
-            }
-        }
-    }
-    return false; 
-}
-
-
 bool Tablero::esEmpate() {
     for (int i = 0; i < 3; i++) {
         for (int j = 0; j < 3; j++) {
@@ -133,7 +121,7 @@ void Tablero::menuTablero() {
             turnoJugador = true;
         }
 
-        if (!hayMovimientosDisponibles(tablero)) {
+        if (esEmpate) {
             imprimirTablero();
             std::cout << "¡Es un empate!" << std::endl;
             break;
