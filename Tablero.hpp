@@ -10,6 +10,9 @@ public:
     void inicializar();
     void imprimirTablero();
     void menuTablero();
+    bool esMovimientoValido(int fila, int columna);
+    int evaluar(char simbolo);
+    bool esEmpate();
 };
 
 #endif
