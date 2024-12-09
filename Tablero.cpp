@@ -30,7 +30,7 @@ void Tablero::imprimirTablero() {
 }
 void Tablero::menuTablero(){
     bool EsVerdad = true;
-    int fila, columna, op; 
+    int fila, columna, op = 0; 
     
     while (EsVerdad)
     {
@@ -40,7 +40,7 @@ void Tablero::menuTablero(){
         std::cout << "1. Jugar" << std::endl;
         std::cout << "2. Salir" << std::endl;
         std::cout << "> ";
-        std::cin >> op;
+        std::cin.ignore(op);
     }
     
     
