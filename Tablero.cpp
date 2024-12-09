@@ -2,7 +2,6 @@
 #include <iostream>
 
 Tablero::Tablero() {
-    inicializar();
 }
 
 void Tablero::inicializar() {
@@ -11,7 +10,6 @@ void Tablero::inicializar() {
             tablero[i][j] = ' ';
         }
     }
-    std::cout << "Tablero inicializado:\n";
 }
 
 
@@ -26,5 +24,17 @@ void Tablero::imprimirTablero() {
         }
         std::cout << std::endl;
         if (i < 2) std::cout << " ---+---+---" << std::endl;
+    }
+
+
+}
+
+void Tablero::menuTablero(){
+    bool EsVerdad = tr
+    int op;e
+    
+    
+    swiitch case(op){
+        
     }
 }
