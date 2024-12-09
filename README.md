@@ -17,6 +17,6 @@ Uso de punteros y arrays estáticos para gestionar la memoria.
 # Ejecución del Programa
 Para ejecutar el programa, utiliza los siguientes comandos:
 
-g++ -o TicTac Minimax.cpp Jugador.cpp Juego.cpp Tablero.cpp main.cpp
+g++ -o TicTac Minimax.cpp Juego.cpp Tablero.cpp main.cpp
 
 ./TicTac.exe
