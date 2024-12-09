@@ -55,6 +55,18 @@ int Tablero::evaluar(char simbolo) {
     return 0;
 }
 
+bool hayMovimientosDisponibles(char tablero[3][3]) {
+    for (int i = 0; i < 3; i++) {
+        for (int j = 0; j < 3; j++) {
+            if (tablero[i][j] == ' ') {
+                return true; 
+            }
+        }
+    }
+    return false; 
+}
+
+
 bool Tablero::esEmpate() {
     for (int i = 0; i < 3; i++) {
         for (int j = 0; j < 3; j++) {
@@ -80,67 +92,54 @@ void Tablero::menuTablero() {
 
         switch (op) {
         case 1:
-            inicializar();
-            std::cout << "Ingrese su nombre: ";
-            std::cin >> nombre;
-            std::cout << "¿Qué símbolo usarás (X, O)? ";
-            std::cin >> simboloJugador;
-            simboloIA = (simboloJugador == 'X') ? 'O' : 'X';
+    inicializar();
+    std::cout << "Ingrese su nombre: ";
+    std::cin >> nombre;
+    std::cout << "¿Qué símbolo usarás (X, O)? ";
+    std::cin >> simboloJugador;
+    simboloIA = (simboloJugador == 'X') ? 'O' : 'X';
 
-            while (true) {
-                imprimirTablero();
+    while (true) {
+        imprimirTablero();
 
-                if (turnoJugador) {
-                    std::cout << nombre << " (" << simboloJugador << "), ingresa fila y columna: ";
-                    std::cin >> fila >> columna;
+        if (turnoJugador) {
+            std::cout << nombre << " (" << simboloJugador << "), ingresa fila y columna: ";
+            std::cin >> fila >> columna;
 
-                    if (esMovimientoValido(fila, columna)) {
-                        tablero[fila][columna] = simboloJugador;
-                        if (evaluar(simboloJugador) == 10) {
-                            imprimirTablero();
-                            std::cout << "¡Felicidades " << nombre << ", has ganado!" << std::endl;
-                            break;
-                        }
-                        turnoJugador = false;
-                    } else {
-                        std::cout << "Movimiento inválido. Intenta de nuevo." << std::endl;
-                    }
-                } else {
-                    int mejorPuntaje = std::numeric_limits<int>::min();
-                    int mejorFila = -1, mejorColumna = -1;
+            if (fila >= 0 && fila < 3 && columna >= 0 && columna < 3 && tablero[fila][columna] == ' ') {
+                tablero[fila][columna] = simboloJugador;
 
-                    for (int i = 0; i < 3; i++) {
-                        for (int j = 0; j < 3; j++) {
-                            if (tablero[i][j] == ' ') {
-                                tablero[i][j] = simboloIA;
-                                int puntaje = minimax(tablero, false, simboloIA, simboloJugador);
-                                tablero[i][j] = ' ';
-                                if (puntaje > mejorPuntaje) {
-                                    mejorPuntaje = puntaje;
-                                    mejorFila = i;
-                                    mejorColumna = j;
-                                }
-                            }
-                        }
-                    }
-
-                    tablero[mejorFila][mejorColumna] = simboloIA;
-
-                    if (evaluar(simboloIA) == 10) {
-                        imprimirTablero();
-                        std::cout << "¡La IA ha ganado! Mejor suerte la próxima vez, " << nombre << "." << std::endl;
-                        break;
-                    }
-                    turnoJugador = true;
-                }
-
-                if (esEmpate()) {
+                if (evaluar(simboloJugador) == 10) {
                     imprimirTablero();
-                    std::cout << "¡Es un empate!" << std::endl;
+                    std::cout << "¡Felicidades " << nombre << ", has ganado!" << std::endl;
                     break;
                 }
+
+                turnoJugador = false;
+            } else {
+                std::cout << "Movimiento inválido. Intenta de nuevo." << std::endl;
             }
+        } else {
+            int mejorFila, mejorColumna;
+            mejorMovimiento(tablero, mejorFila, mejorColumna, simboloIA);
+            tablero[mejorFila][mejorColumna] = simboloIA;
+
+            if (evaluar(simboloIA) == 10) {
+                imprimirTablero();
+                std::cout << "¡La IA ha ganado! Mejor suerte la próxima vez, " << nombre << "." << std::endl;
+                break;
+            }
+
+            turnoJugador = true;
+        }
+
+        if (!hayMovimientosDisponibles(tablero)) {
+            imprimirTablero();
+            std::cout << "¡Es un empate!" << std::endl;
             break;
+        }
+    }
+    break;
 
         case 2:
             std::cout << "¡Hasta luego!" << std::endl;
