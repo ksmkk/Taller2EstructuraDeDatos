@@ -28,13 +28,37 @@ void Tablero::imprimirTablero() {
 
 
 }
-
 void Tablero::menuTablero(){
-    bool EsVerdad = tr
-    int op;e
+    bool EsVerdad = true;
+    int fila, columna, op; 
+    
+    while (EsVerdad)
+    {
+        std::cout << "===============TIC TAC==================" << std::endl;
+        std::cout << " " << std::endl;
+        std::cout << "Ingrese una opción: " << std::endl;
+        std::cout << "1. Jugar" << std::endl;
+        std::cout << "2. Salir" << std::endl;
+        std::cout << "> ";
+        std::cin >> op;
+    }
     
     
-    swiitch case(op){
-        
+    switch (op)
+    {
+    case 1:
+        std::cout<<"¿Que simbolo usarás (X , O)?"<<std::endl;
+        std::cout<< "Ingresa fila: "<<std::endl;
+        std::cin>> fila;
+        std::cout<<"Ingrese columna: "<<std::endl;
+        std::cin>>columna;
+
+        break;
+    case 2:
+        std::cout<<"Hasta Luego!"<<std::endl;
+    
+    default:
+        std::cout << "Opción incorrecta, Reingrese:" << std::endl;
+        break;
     }
 }

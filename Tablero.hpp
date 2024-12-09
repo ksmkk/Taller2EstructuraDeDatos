@@ -9,6 +9,7 @@ public:
     Tablero();
     void inicializar();
     void imprimirTablero();
+    void menuTablero();
 };
 
 #endif
