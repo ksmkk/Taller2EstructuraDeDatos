@@ -82,7 +82,7 @@ void Tablero::menuTablero() {
         case 1:
             std::cout << "Ingrese su nombre: ";
             std::cin >> nombre;
-            std::cout << "¿Qué simbolo usarás (X, O)? ";
+            std::cout << "¿Que simbolo usaras (X, O)? ";
             std::cin >> simboloJugador;
             simboloIA = (simboloJugador == 'X') ? 'O' : 'X';
 
