@@ -1,4 +1,4 @@
-![image](https://github.com/user-attachments/assets/40d4af88-55cb-47ed-888e-b36387d80bc1)# Taller 2 - Estructura de Datos: Implementación del Algoritmo Minimax con Poda Alfa-Beta en un Juego
+# Taller 2 - Estructura de Datos: Implementación del Algoritmo Minimax con Poda Alfa-Beta en un Juego
 *Descripción*
 Este proyecto implementa un agente inteligente para un juego clásico de tablero utilizando el algoritmo Minimax y su optimización mediante Poda Alfa-Beta. Como caso base, se desarrolló el juego del gato (tic-tac-toe), donde los jugadores compiten por completar tres casillas en línea.
 
@@ -68,3 +68,5 @@ Minimax con Poda Alfa-Beta:
 O(b 
 d/2
  ) en el mejor caso, reduciendo significativamente los nodos explorados.
+# Ejemplo de Árbol de Decisiones
+![image](https://github.com/user-attachments/assets/37d4587b-5e51-491e-b5b9-57d6fc5790da)
