@@ -42,3 +42,4 @@ La interfaz es en consola, permitiendo:
 Jugar contra la IA.
 Visualizar el estado del tablero en cada turno.
 Ver cómo la IA toma decisiones estratégicas.
+
