@@ -21,24 +21,8 @@ Compilador: g++
 Organización: Código modular con archivos .cpp y .h.
 Gestión de memoria: Uso de punteros y arrays estáticos.
 Ejecución del Programa
-Compilación:
+# Compilación:
 Usa el siguiente comando para compilar el programa:
-
-bash
-Copiar código
 g++ -o TicTac Minimax.cpp Juego.cpp Tablero.cpp main.cpp
 Ejecución:
-Ejecuta el programa con:
-
-bash
-Copiar código
 ./TicTac.exe
-Implementación
-1. Introducción al Algoritmo Minimax
-El algoritmo Minimax se utiliza para tomar decisiones óptimas en juegos de dos jugadores. Se basa en maximizar las ganancias para un jugador mientras minimiza las del oponente, recorriendo todas las posibles configuraciones del tablero.
-
-Poda Alfa-Beta: Optimización que reduce los nodos explorados, descartando ramas que no influyen en la decisión final.
-2. Componentes del Juego
-Clase Tablero: Representa el estado del juego y verifica las condiciones de victoria o empate.
-Clase Juego: Controla la lógica del juego y el flujo entre los turnos.
-Algoritmo Minimax: Implementa la lógica de la IA para realizar movimientos estratégicos.
