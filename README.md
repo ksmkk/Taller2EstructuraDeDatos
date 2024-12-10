@@ -69,4 +69,4 @@ O(b
 d/2
  ) en el mejor caso, reduciendo significativamente los nodos explorados.
 # Ejemplo de Árbol de Decisiones
-![image](https://github.com/user-attachments/assets/37d4587b-5e51-491e-b5b9-57d6fc5790da)
+![image](https://github.com/user-attachments/assets/1a9c83ad-d6bd-4b3a-8073-1350fd24dd41)
